@@ -48,3 +48,13 @@ export const changeTheme = (value: Theme) => {
 			break
 	}
 }
+
+export const mediaQueryListener = (e: MediaQueryListEvent) => {
+	if (localStorage.theme === 'system') {
+		if (e.matches) {
+			document.documentElement.setAttribute('data-theme', 'dark')
+		} else {
+			document.documentElement.setAttribute('data-theme', 'light')
+		}
+	}
+}
