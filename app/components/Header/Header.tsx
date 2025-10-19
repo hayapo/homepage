@@ -2,10 +2,10 @@ import { ThemeSwitcher } from './_ThemeSwitcher.island'
 
 export const Header = () => {
 	return (
-		<header className="navbar bg-base-100 shadow-sm">
-			<div class="flex mx-auto w-2xl lg:w-lg">
-				<div className="flex-1 align-middle">
-					<a href="/" className="btn btn-ghost text-xl">
+		<header className="navbar bg-base-100 p-0">
+			<div className="flex w-screen max-w-4xl mx-auto items-center">
+				<div className="flex-1">
+					<a href="/" className="btn btn-ghost text-xl p-2">
 						hayapo blog
 					</a>
 				</div>

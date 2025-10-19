@@ -1,16 +1,9 @@
-import { css, Style } from 'hono/css'
+import { Style } from 'hono/css'
 import { jsxRenderer } from 'hono/jsx-renderer'
 import { Link, Script } from 'honox/server'
 import { Header } from '../components/Header/Header'
 
 export default jsxRenderer(({ children }) => {
-	const bodyCss = css`
-	:-hono-global {
-		body {
-			min-height: 100vh;
-		}
-	}
-	`
 
 	return (
 		<html lang="ja">
@@ -18,14 +11,16 @@ export default jsxRenderer(({ children }) => {
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<link rel="icon" href="/favicon.ico" />
-				<Script src="/app/theme.ts" />
+				<Script src="/app/initTheme.ts" />
 				<Link href="/app/style.css" rel="stylesheet" />
 				<Style />
 				<Script src="/app/client.ts" async />
 			</head>
-			<body class={bodyCss}>
+			<body class='mx-4'>
 				<Header />
-				{children}
+				<main class='max-w-3xl mx-auto'>
+					{children}
+				</main>
 			</body>
 		</html>
 	)
