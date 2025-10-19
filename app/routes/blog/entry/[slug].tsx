@@ -1,6 +1,6 @@
 import { ssgParams } from 'hono/ssg'
 import { createRoute } from 'honox/factory'
-import { getEntries, getEntryByEntryName } from '../../lib/entries'
+import { getEntries, getEntryByEntryName } from '../../../lib/entries'
 
 export default createRoute(
 	ssgParams(() =>
@@ -14,6 +14,6 @@ export default createRoute(
 		if (!entry) {
 			return c.render(<h2>記事が見つからないよ &gt;&lt; </h2>)
 		}
-		return c.render(<div class="max-w-4xl mx-auto">{entry.Component({})}</div>)
+		return c.render(<div className="overflow-auto break-words">{entry.Component({})}</div>)
 	},
 )
