@@ -9,8 +9,8 @@ import { Sun } from '../Icons/Sun'
 export const ThemeSwitcher = () => {
 	const items = [
 		{ value: 'system', label: 'System' },
-		{ value: 'winter', label: 'Light' },
-		{ value: 'dim', label: 'Dark' },
+		{ value: 'light', label: 'Light' },
+		{ value: 'dark', label: 'Dark' },
 	] as const satisfies readonly {
 		value: Theme
 		label: string
@@ -32,7 +32,7 @@ export const ThemeSwitcher = () => {
 				<ArrowDown />
 			</button>
 			{/* biome-ignore lint: noNoninteractiveTabindex */}
-			<ul tabIndex={0} className="dropdown-content bg-base-300 rounded-box z-1 p-2 shadow-2xl w-fit">
+			<ul tabIndex={0} className="dropdown-content rounded-box z-1 p-2 shadow-2xl w-fit bg-base-300">
 				{items.map(item => {
 					return (
 						<li class="flex flex-row gap-2 justify-between">
@@ -62,9 +62,9 @@ const ConditionalThemeIcon = ({ theme }: { theme: Theme }) => {
 	switch (theme) {
 		case 'system':
 			return <Computer class="size-5" />
-		case 'winter':
+		case 'light':
 			return <Sun class="size-5" />
-		case 'dim':
+		case 'dark':
 			return <Moon class="size-5" />
 	}
 }

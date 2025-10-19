@@ -14,6 +14,6 @@ export default createRoute(
 		if (!entry) {
 			return c.render(<h2>記事が見つからないよ &gt;&lt; </h2>)
 		}
-		return c.render(<div>{entry.Component({})}</div>)
+		return c.render(<div class="max-w-4xl mx-auto">{entry.Component({})}</div>)
 	},
 )

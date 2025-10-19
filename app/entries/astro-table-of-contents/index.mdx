@@ -18,7 +18,7 @@ Content Collectionsを使用していることを前提としています。
 本ブログはAstroのContent Collectionsを使用してMDXでブログを執筆しており、
 `astro:content`ではheadingsが以下のように実装されています。
 
-```ts
+```ts title="hoge.ts" {2}
 // node_modules/(略)/markdown-remark/types.d.ts
 export interface MarkdownHeading {
   depth: number; // 見出しのレベル
@@ -41,7 +41,7 @@ export interface MarkdownHeading {
 
 具体的には、`ContentEntryMap`型に実装された`render`メソッドの返り値に`headings: MarkdownHeading[]`が含まれているので、これを利用します。
 
-```ts
+```ts showLineNumbers
 // .astro/types.d.ts
 
 export type CollectionEntry<C extends CollectionKey> = Flatten<AnyEntryMap[C]>;

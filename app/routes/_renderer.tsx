@@ -1,9 +1,17 @@
-import { Style } from 'hono/css'
+import { css, Style } from 'hono/css'
 import { jsxRenderer } from 'hono/jsx-renderer'
 import { Link, Script } from 'honox/server'
 import { Header } from '../components/Header/Header'
 
 export default jsxRenderer(({ children }) => {
+	const bodyCss = css`
+	:-hono-global {
+		body {
+			min-height: 100vh;
+		}
+	}
+	`
+
 	return (
 		<html lang="ja">
 			<head>
@@ -15,7 +23,7 @@ export default jsxRenderer(({ children }) => {
 				<Style />
 				<Script src="/app/client.ts" async />
 			</head>
-			<body class="min-h-screen">
+			<body class={bodyCss}>
 				<Header />
 				{children}
 			</body>

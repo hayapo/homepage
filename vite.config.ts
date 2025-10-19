@@ -5,6 +5,7 @@ import mdx from '@mdx-js/rollup'
 import tailwindcss from '@tailwindcss/vite'
 import honox from 'honox/vite'
 import rehypePrettyCode from 'rehype-pretty-code'
+import rehypeStringify from 'rehype-stringify'
 import remarkBreaks from 'remark-breaks'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
@@ -23,8 +24,8 @@ export default defineConfig({
 		ssg({ entry }),
 		mdx({
 			jsxImportSource: 'hono/jsx',
-			remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm, remarkBreaks, remarkRehype],
-			rehypePlugins: [[rehypePrettyCode, { theme: 'dark-plus' }]],
+			remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkBreaks, remarkRehype, remarkGfm],
+			rehypePlugins: [rehypeStringify, [rehypePrettyCode, { theme: 'dark-plus' }]],
 		}),
 		tailwindcss(),
 		build(),

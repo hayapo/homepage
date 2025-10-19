@@ -1,28 +1,28 @@
 // https://github.com/azukiazusa1/sapper-blog-app/blob/main/app/src/utils/darkTheme.ts
-export type Theme = 'system' | 'winter' | 'dim'
+export type Theme = 'system' | 'light' | 'dark'
 
 export const initTheme = () => {
 	if (!('theme' in localStorage) || localStorage.theme === 'system') {
 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			document.documentElement.setAttribute('data-theme', 'dim')
+			document.documentElement.setAttribute('data-theme', 'dark')
 		} else {
-			document.documentElement.setAttribute('data-theme', 'winter')
+			document.documentElement.setAttribute('data-theme', 'light')
 		}
 		localStorage.theme = 'system'
-	} else if (localStorage.theme === 'dim') {
-		document.documentElement.setAttribute('data-theme', 'dim')
+	} else if (localStorage.theme === 'dark') {
+		document.documentElement.setAttribute('data-theme', 'dark')
 	} else {
-		document.documentElement.setAttribute('data-theme', 'winter')
+		document.documentElement.setAttribute('data-theme', 'light')
 	}
 }
 
 export const getTheme = (): Theme => {
 	if (!('theme' in localStorage)) {
 		return 'system'
-	} else if (localStorage.theme === 'winter') {
-		return 'winter'
-	} else if (localStorage.theme === 'dim') {
-		return 'dim'
+	} else if (localStorage.theme === 'light') {
+		return 'light'
+	} else if (localStorage.theme === 'dark') {
+		return 'dark'
 	} else {
 		return 'system'
 	}
@@ -33,18 +33,18 @@ export const changeTheme = (value: Theme) => {
 		case 'system':
 			localStorage.setItem('theme', 'system')
 			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				document.documentElement.setAttribute('data-theme', 'dim')
+				document.documentElement.setAttribute('data-theme', 'dark')
 			} else {
-				document.documentElement.setAttribute('data-theme', 'winter')
+				document.documentElement.setAttribute('data-theme', 'light')
 			}
 			break
-		case 'winter':
-			localStorage.setItem('theme', 'winter')
-			document.documentElement.setAttribute('data-theme', 'winter')
+		case 'light':
+			localStorage.setItem('theme', 'light')
+			document.documentElement.setAttribute('data-theme', 'light')
 			break
-		case 'dim':
-			localStorage.setItem('theme', 'dim')
-			document.documentElement.setAttribute('data-theme', 'dim')
+		case 'dark':
+			localStorage.setItem('theme', 'dark')
+			document.documentElement.setAttribute('data-theme', 'dark')
 			break
 	}
 }

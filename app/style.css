@@ -1,9 +1,13 @@
 @import "tailwindcss" source("../app");
-@custom-variant dark (&:where([data-theme=dim], [data-theme=dim] *));
-@plugin "daisyui";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@import "./styles/syntax-highlight.css";
+/* @plugin "@tailwindcss/typography"; */
+@plugin "daisyui" {
+	/* exclude: rootcolor; */
+}
 
 @plugin "daisyui/theme" {
-	name: "winter";
+	name: "light";
 	default: false;
 	prefersdark: false;
 	color-scheme: "light";
@@ -38,15 +42,15 @@
 }
 
 @plugin "daisyui/theme" {
-	name: "dim";
+	name: "dark";
 	default: false;
-	prefersdark: true;
+	prefersdark: false;
 	color-scheme: "dark";
 	--color-base-100: oklch(30.857% 0.023 264.149);
 	--color-base-200: oklch(28.036% 0.019 264.182);
 	--color-base-300: oklch(26.346% 0.018 262.177);
-	--color-base-content: oklch(98% 0.001 106.423);
-	--color-primary: oklch(71% 0.143 215.221);
+	--color-base-content: oklch(82.901% 0.031 222.959);
+	--color-primary: oklch(86.133% 0.141 139.549);
 	--color-primary-content: oklch(17.226% 0.028 139.549);
 	--color-secondary: oklch(73.375% 0.165 35.353);
 	--color-secondary-content: oklch(14.675% 0.033 35.353);
@@ -60,7 +64,7 @@
 	--color-success-content: oklch(17.234% 0.028 166.534);
 	--color-warning: oklch(86.163% 0.142 94.818);
 	--color-warning-content: oklch(17.232% 0.028 94.818);
-	--color-error: oklch(70% 0.191 22.216);
+	--color-error: oklch(82.418% 0.099 33.756);
 	--color-error-content: oklch(16.483% 0.019 33.756);
 	--radius-selector: 1rem;
 	--radius-field: 0.5rem;
