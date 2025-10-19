@@ -32,7 +32,9 @@ export const getEntries = () => {
 		.sort(sortByPublishedAtDesc())
 		.map(([path, entry]) => {
 			return {
-				id: path.replace(/^\.\.\/entries\//, '').replace(/\/index\.mdx$/, ''),
+				id: path
+					.replace(/^\.\.\/entries\//, '')
+					.replace(/\/index\.mdx$/, ''),
 				frontmatter: entry.frontmatter,
 				Component: entry.default,
 			}
