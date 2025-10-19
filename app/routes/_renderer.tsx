@@ -16,6 +16,11 @@ export default jsxRenderer(({ children }) => {
 				<Style />
 				<Script src="/app/client.ts" async />
 			</head>
+			{/* 
+			TODO: 
+				メディアクエリ周りをいい感じにする。
+				スクリーンサイズに合わせて header と main の width を三段階くらいで調整したい
+			*/}
 			<body class='mx-4'>
 				<Header />
 				<main class='max-w-3xl mx-auto'>
