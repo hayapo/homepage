@@ -10,7 +10,6 @@
 	"private": true,
 	"dependencies": {
 		"@mdx-js/rollup": "^3.1.1",
-		"daisyui": "^5.1.27",
 		"hono": "^4.9.9",
 		"honox": "^0.1.49",
 		"rehype-pretty-code": "^0.14.1",
