@@ -1,9 +1,20 @@
 import { createRoute } from 'honox/factory'
+import { getEntries } from '../lib/entries'
 
 export default createRoute(c => {
+	const entries = getEntries()
+	// console.log(entries)
 	return c.render(
-		<div className="py-8">
-			<h1>トップページだよ</h1>
+		<div>
+			<h1>Blog Top Page</h1>
+			<p>ブログのトップページだよ</p>
+			{entries.map(entry => {
+				return (
+					<li>
+						<a href={`/blog/entry/${entry.id}`}>{entry.frontmatter.title}</a>
+					</li>
+				)
+			})}
 		</div>,
 	)
 })
