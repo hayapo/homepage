@@ -13,7 +13,7 @@ export default jsxRenderer(({ children }) => {
 				<script src="/app/initTheme.ts" />
 				<Script src="/app/client.ts" async />
 				<Style />
-				<Link href="/app/style.css" rel="stylesheet" />
+				<Link href="/app/styles/index.css" rel="stylesheet" />
 			</head>
 			{/* 
 			TODO: 
