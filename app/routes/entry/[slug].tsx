@@ -14,6 +14,6 @@ export default createRoute(
 		if (!entry) {
 			return c.render(<h2>記事が見つからないよ &gt;&lt; </h2>)
 		}
-		return c.render(<div className="overflow-auto break-words">{entry.Component({})}</div>)
+		return c.render(<article className="article">{entry.Component({})}</article>)
 	},
 )

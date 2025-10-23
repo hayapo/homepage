@@ -11,7 +11,7 @@ export default createRoute(c => {
 			{entries.map(entry => {
 				return (
 					<li>
-						<a href={`/blog/entry/${entry.id}`}>{entry.frontmatter.title}</a>
+						<a href={`/entry/${entry.id}`}>{entry.frontmatter.title}</a>
 					</li>
 				)
 			})}
