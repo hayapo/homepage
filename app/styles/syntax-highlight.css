@@ -3,7 +3,8 @@ code {
 }
 
 code[data-theme],
-code[data-theme] span {
+code[data-theme] span,
+pre > code {
 	color: var(--shiki);
 	background-color: var(--shiki-bg);
 }
