@@ -1,10 +1,9 @@
 .article {
-
 	:where(p) {
 		margin-top: 1.25em;
 		margin-bottom: 1.25em;
 	}
-	
+
 	:where(h1) {
 		font-size: clamp(1.5rem, 1.136rem + 1.82vw, 2.5rem);
 		@apply mb-4;
@@ -16,7 +15,7 @@
 	}
 
 	h3 {
-		font-size: clamp(1.25rem, 1.159rem + 0.45vw, 2.0rem);
+		font-size: clamp(1.25rem, 1.159rem + 0.45vw, 2rem);
 		@apply mb-2;
 	}
 
@@ -35,6 +34,14 @@
 
 	ol {
 		@apply text-base pl-8 list-decimal;
+	}
+
+	mark {
+		@apply bg-(--color-green-a6);
+	}
+
+	:whrere(kbd) {
+		@apply dark:text-gray-12;
 	}
 
 	:where(thead) {
@@ -81,7 +88,7 @@
 		@apply mt-4;
 	}
 
-		:where(hr + *) {
+	:where(hr + *) {
 		@apply mt-0;
 	}
 

@@ -57,10 +57,11 @@ figure[data-rehype-pretty-code-figure]:has(> [data-rehype-pretty-code-title])
 }
 
 figcaption[data-rehype-pretty-code-title] {
-	@apply bg-gray-300 dark:bg-gray-700 text-sm py-2 px-4 rounded-t-lg;
+	@apply bg-gray-300 dark:bg-gray-700 text-sm py-2 px-4 rounded-t-lg dark:text-gray-12;
 }
 
+td > code,
 p > code,
 li > code {
-	@apply bg-gray-4 p-1 rounded-sm;
+	@apply bg-gray-4 mx-1 p-1 rounded-sm;
 }
