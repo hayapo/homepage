@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'hono/jsx'
+import { useCallback, useEffect, useState } from 'hono/jsx'
 import { changeTheme, getTheme, type Theme } from '../../util/theme'
 import { ArrowDown } from '../Icons/ArrowDown'
 import { Check } from '../Icons/Check'
@@ -16,14 +16,18 @@ export const ThemeSwitcher = () => {
 		label: string
 	}[]
 
-	const [theme, setTheme] = useState<Theme>('system')
+	const [theme, setTheme] = useState<Theme | null>(null)
+
 	useEffect(() => {
-		setTheme(getTheme())
-	}, [])
-	const handleClick = (t: Theme) => {
+    // コンポーネントがマウントされた後に localStorage からテーマを取得
+    setTheme(getTheme())
+  }, [])
+
+	const handleClick = useCallback((t: Theme) => {
 		setTheme(t)
 		changeTheme(t)
-	}
+	}, [setTheme, changeTheme])
+
 	return (
 		<div className="dropdown">
 			<button tabIndex={0} type="button" className="btn m-1 px-2">
